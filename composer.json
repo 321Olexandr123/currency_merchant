@@ -24,7 +24,8 @@
   "require": {
     "php": ">=7.1.0",
     "nowakowskir/php-jwt": "^1.1",
-    "symfony/http-client": "*"
+    "symfony/http-client": "*",
+    "crpt/control-panel": "^1.0"
   },
   "require-dev": {
     "ext-json": "*"
