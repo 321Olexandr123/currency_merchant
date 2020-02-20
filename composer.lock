@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dccc751ce6c23042648e461c56d038c2",
+    "content-hash": "914c8d2eaa07892c50f24098d81304cc",
     "packages": [
+        {
+            "name": "crpt/control-panel",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/321Olexandr123/control-panel_lib.git",
+                "reference": "94d9d0369d12d4ac21e1a459af92f9906f35aae3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/321Olexandr123/control-panel_lib/zipball/94d9d0369d12d4ac21e1a459af92f9906f35aae3",
+                "reference": "94d9d0369d12d4ac21e1a459af92f9906f35aae3",
+                "shasum": ""
+            },
+            "require": {
+                "nowakowskir/php-jwt": "^1.1",
+                "php": ">=7.1.0",
+                "symfony/http-client": "*"
+            },
+            "require-dev": {
+                "ext-json": "*"
+            },
+            "type": "library",
+            "extra": {
+                "symfony": {
+                    "allow-contrib": "true"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ControlPanel\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Александр Громский",
+                    "email": "rskrydge@itlab-studio.com"
+                }
+            ],
+            "time": "2020-02-20T08:24:28+00:00"
+        },
         {
             "name": "nowakowskir/php-jwt",
             "version": "1.1.1",
@@ -269,16 +314,16 @@
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.13.1",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "4b0e2222c55a25b4541305a053013d5647d3a25f"
+                "reference": "5e66a0fa1070bf46bec4bea7962d285108edd675"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/4b0e2222c55a25b4541305a053013d5647d3a25f",
-                "reference": "4b0e2222c55a25b4541305a053013d5647d3a25f",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/5e66a0fa1070bf46bec4bea7962d285108edd675",
+                "reference": "5e66a0fa1070bf46bec4bea7962d285108edd675",
                 "shasum": ""
             },
             "require": {
@@ -287,7 +332,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -323,7 +368,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-11-27T16:25:15+00:00"
+            "time": "2020-01-13T11:15:53+00:00"
         },
         {
             "name": "symfony/service-contracts",
