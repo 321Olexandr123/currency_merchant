@@ -1,6 +1,6 @@
 <?php
 
-namespace CurrencyMerchant\Payment;
+namespace CurrencyMerchant\CurrencyMerchant;
 
 use Symfony\Component\HttpClient\NativeHttpClient;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
