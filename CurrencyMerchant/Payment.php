@@ -29,7 +29,7 @@ class Payment
     {
         $client = new NativeHttpClient();
 
-        $response = $client->request('POST', 'http://uapay.crpt.trading/payment/invoices', [
+        $response = $client->request('POST', 'https://uapay.crpt.trading/payment/invoices', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer
