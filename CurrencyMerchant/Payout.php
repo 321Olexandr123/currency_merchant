@@ -9,15 +9,15 @@ use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
-class Payment
+class Payout
 {
     /**
      * @param string $bearer
      * @param float $amount
-     * @param string $return_url
+     * @param string $currency
+     * @param string $card_number
      * @param string $reference_id
      * @param string $callback_url
-     * @param string $currency
      * @return array
      * @throws ClientExceptionInterface
      * @throws DecodingExceptionInterface
@@ -25,43 +25,22 @@ class Payment
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    public static function invoices(string $bearer, float $amount, string $return_url, string $reference_id, string $callback_url, string $currency)
+    public static function payout(string $bearer, float $amount, string $currency, string $card_number, string $reference_id, string $callback_url)
     {
         $client = new NativeHttpClient();
 
-        $response = $client->request('POST', 'https://uapay.crpt.trading/payment/invoices', [
+        $response = $client->request('POST', 'https://uapay.crpt.trading/payout/invoices', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer
             ],
             'json' => [
                 'amount' => $amount,
-                'return_url' => $return_url,
+                'currency' => $currency,
+                'card_number' => $card_number,
                 'reference_id' => $reference_id,
-                'callback_url' => $callback_url,
-                'currency' => $currency
+                'callback_url' => $callback_url
             ]
-        ]);
-        return $response->toArray();
-    }
-
-    /**
-     * @param string $bearer
-     * @return array
-     * @throws ClientExceptionInterface
-     * @throws DecodingExceptionInterface
-     * @throws RedirectionExceptionInterface
-     * @throws ServerExceptionInterface
-     * @throws TransportExceptionInterface
-     */
-    public function getBalance(string $bearer)
-    {
-        $client = new NativeHttpClient();
-        $response = $client->request('GET', 'https://uapay.crpt.trading/payment/balance', [
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $bearer
-            ],
         ]);
         return $response->toArray();
     }
