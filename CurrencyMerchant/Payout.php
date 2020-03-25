@@ -25,7 +25,7 @@ class Payout
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    public static function payout(string $bearer, float $amount, string $currency, string $card_number, string $reference_id, string $callback_url)
+    public static function invoices(string $bearer, float $amount, string $currency, string $card_number, string $reference_id, string $callback_url)
     {
         $client = new NativeHttpClient();
 
