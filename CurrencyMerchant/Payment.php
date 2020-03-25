@@ -3,6 +3,8 @@
 namespace CurrencyMerchant\CurrencyMerchant;
 
 use Symfony\Component\HttpClient\NativeHttpClient;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
@@ -41,6 +43,27 @@ class Payment
                 'callback_url' => $callback_url,
                 'currency' => $currency
             ]
+        ]);
+        return $response->toArray();
+    }
+
+    /**
+     * @param string $bearer
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws DecodingExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws TransportExceptionInterface
+     */
+    public function getBalance(string $bearer)
+    {
+        $client = new NativeHttpClient();
+        $response = $client->request('GET', 'https://uapay.crpt.trading/payment/balance', [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' .$bearer
+            ],
         ]);
         return $response->toArray();
     }
