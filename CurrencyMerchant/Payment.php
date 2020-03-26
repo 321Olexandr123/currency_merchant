@@ -54,7 +54,7 @@ class Payment
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    public function getBalance(string $bearer)
+    public static function getBalance(string $bearer)
     {
         $client = new NativeHttpClient();
         $response = $client->request('GET', 'https://uapay.crpt.trading/payment/balance', [
