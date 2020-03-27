@@ -57,7 +57,7 @@ class Payment
     public static function getBalance(string $bearer)
     {
         $client = new NativeHttpClient();
-        $response = $client->request('GET', 'https://uapay.crpt.trading/payment/balance', [
+        $response = $client->request('GET', 'https://uapay.crpt.trading/total/balance', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer
