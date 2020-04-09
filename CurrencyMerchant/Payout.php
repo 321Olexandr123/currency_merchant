@@ -29,7 +29,7 @@ class Payout
     {
         $client = new NativeHttpClient();
 
-        $response = $client->request('POST', 'https://uapay.crpt.trading/payout/invoices', [
+        $response = $client->request('POST', 'https://curm.crpt.trading/payout/invoices', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer

@@ -29,7 +29,7 @@ class Payment
     {
         $client = new NativeHttpClient();
 
-        $response = $client->request('POST', 'https://uapay.crpt.trading/payment/invoices', [
+        $response = $client->request('POST', 'https://curm.crpt.trading/payment/invoices', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer
@@ -57,7 +57,7 @@ class Payment
     public static function getBalance(string $bearer)
     {
         $client = new NativeHttpClient();
-        $response = $client->request('GET', 'https://uapay.crpt.trading/total/balance', [
+        $response = $client->request('GET', 'https://curm.crpt.trading/total/balance', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $bearer
