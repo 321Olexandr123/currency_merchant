@@ -18,6 +18,7 @@ class Payout
      * @param string $card_number
      * @param string $reference_id
      * @param string $callback_url
+     * @param string $type
      * @return array
      * @throws ClientExceptionInterface
      * @throws DecodingExceptionInterface
@@ -25,7 +26,7 @@ class Payout
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    public static function invoices(string $bearer, float $amount, string $currency, string $card_number, string $reference_id, string $callback_url)
+    public static function invoices(string $bearer, float $amount, string $currency, string $card_number, string $reference_id, string $callback_url, string $type)
     {
         $client = new NativeHttpClient();
 
@@ -39,7 +40,8 @@ class Payout
                 'currency' => $currency,
                 'card_number' => $card_number,
                 'reference_id' => $reference_id,
-                'callback_url' => $callback_url
+                'callback_url' => $callback_url,
+                'type' => $type
             ]
         ]);
         return $response->toArray();
